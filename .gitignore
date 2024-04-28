@@ -2,6 +2,7 @@ bin
 build
 include
 lib*
+.idea
 make.bat
 Makefile
-pyenv.cfg
+pyvenv.cfg
