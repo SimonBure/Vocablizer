@@ -1,1 +1,2 @@
-# APPLI_VOCA
+# WELCOME TO VOCABLIZER !
+Hello world !
