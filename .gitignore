@@ -6,3 +6,5 @@ lib*
 make.bat
 Makefile
 pyvenv.cfg
+vocablizer\db.sqlite3
+*.pyc
