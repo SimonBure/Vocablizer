@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        <h1>Home</h1>
+        <p>This is a website to master any language you want.</p>
+        <h2>English words:</h2>
+        <ul> 
+            {% for word in words %}
+                {% if word.word|length > 5 %}
+                    <li>{{ word.word|upper }}</li>
+                {% else %}
+                    <li>{{ word.word|lower }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <p> Length of english words list : {{ words|length }}</p>
+
+
+    </body>
+
+
+    
