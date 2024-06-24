@@ -1,0 +1,71 @@
+/* Palette de couleurs */
+:root {
+    --primary-color: #4A90E2; /* Bleu doux */
+    --secondary-color: #50E3C2; /* Vert d'eau */
+    --text-color: #4A4A4A; /* Gris foncé */
+    --background-color: #F5F5F5; /* Gris très clair */
+    --border-color: #B0C4DE; /* Bleu clair pour les bordures */
+}
+
+/* Typographie globale */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* En-têtes */
+h1, h2, h3 {
+    color: var(--primary-color);
+    padding: 10px;
+    margin: 20px 0;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Paragraphes */
+p {
+    margin-bottom: 1em;
+}
+
+/* Liens */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Boutons */
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+/* Espacement et conteneurs */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 2em;
+}
