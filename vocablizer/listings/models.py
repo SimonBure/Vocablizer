@@ -25,7 +25,7 @@ class English(models.Model):
     
 class Example(models.Model):
     id = models.fields.AutoField(primary_key=True)
-    english = models.ForeignKey(English, on_delete=models.SET_NULL, null=True) # null = True, because we want to allow examples without English words
+    english = models.ForeignKey(English, on_delete=models.CASCADE)
     example = models.fields.CharField(max_length=100)
     created_at = models.fields.DateTimeField(auto_now_add=True)
     updated_at = models.fields.DateTimeField(auto_now=True)
