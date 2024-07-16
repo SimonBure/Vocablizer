@@ -1,0 +1,14 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+    <h2> Example of {{example.english}} :</h2>
+    <ul>
+        <li> {{ example.example }} 
+        <li> <a href="{% url 'english-detail' example.english.id%}">{{ example.english }}</a>
+        <li> {{ example.created_at }}
+        <li> {{ example.updated_at }}
+    </ul>
+
+    <a href="{% url 'example-list' %}">Back to the list</a>
+
+{% endblock %}

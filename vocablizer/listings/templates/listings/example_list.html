@@ -1,0 +1,15 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+
+<h1>List of all examples</h1>
+<ul> 
+    {% for example in examples %}
+        <h4> Example for <a href="{% url 'example-detail' example.id%}">
+            {{ example.english}}</a> : </h4>
+        <p>- {{ example.example }} </p>
+    {% endfor %}
+</ul>
+
+{% endblock %}

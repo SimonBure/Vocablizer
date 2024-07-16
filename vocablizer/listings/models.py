@@ -21,9 +21,10 @@ class English(models.Model):
     updated_at = models.fields.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.word} ({self.genre})" 
+        return f"\"{self.word}\"" 
     
 class Example(models.Model):
+    id = models.fields.AutoField(primary_key=True)
     english = models.ForeignKey(English, on_delete=models.SET_NULL, null=True) # null = True, because we want to allow examples without English words
     example = models.fields.CharField(max_length=100)
     created_at = models.fields.DateTimeField(auto_now_add=True)
