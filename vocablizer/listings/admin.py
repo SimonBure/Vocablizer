@@ -4,7 +4,7 @@ from listings.models import English
 from listings.models import Example
 
 class EnglishAdmin(admin.ModelAdmin):
-    list_display = ('word', 'meaning', 'rank', 'active', 'genre', 'created_at', 'updated_at')
+    list_display = ('word', 'id', 'meaning', 'rank', 'active', 'genre', 'created_at', 'updated_at')
     list_filter = ('active', 'rank', 'genre')
     search_fields = ('word', 'meaning')
     ordering = ['rank', 'word']

@@ -1,0 +1,20 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+    <h2> Detail for {{english_word.word}} :</h2>
+    <ul>
+        <li>Genre: {{english_word.get_genre_display}}</li>
+        {% if english_word.synonym%}
+        <li>Meaning: {{english_word.meaning}}</li>
+        {% endif %}
+        {% if english_word.example%}
+        <li>Example: {{english_word.example}}</li>
+        {% endif %}
+        <li>Created at: {{english_word.created_at}}</li>
+        <li>Updated at: {{english_word.updated_at}}</li>
+        <li>Active: {{english_word.active|yesno}}</li>
+    </ul>
+
+    <a href="{% url 'english-list' %}">Back to the list</a>
+
+{% endblock %}

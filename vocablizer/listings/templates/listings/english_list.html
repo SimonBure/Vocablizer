@@ -8,10 +8,10 @@
 <h2>English words:</h2>
 <ul> 
     {% for word in words %}
-        {% if word.word|length > 5 %}
-            <li>{{ word.word|upper }}</li>
+        {% if word.rank == 1 %}
+            <li><a href="{% url 'english-detail' word.id%}">{{ word.word|upper }}</a></li>
         {% else %}
-            <li>{{ word.word|lower }}</li>
+            <li><a href="{% url 'english-detail' word.id%}">{{ word.word|lower }}</a></li>
         {% endif %}
     {% endfor %}
 </ul>
