@@ -8,4 +8,12 @@
     <p>Phone: 123-456-7890</p>
     <p>Address: 123 Main Street, City, State, ZIP</p>
 
+    <h1>Contact us: </h1>
+
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    
+
 {% endblock %}

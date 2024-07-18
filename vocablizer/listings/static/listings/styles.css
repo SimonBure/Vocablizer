@@ -69,3 +69,5 @@ button:hover {
 .section {
     margin-bottom: 2em;
 }
+
+.errorlist { margin-bottom: -10px }
