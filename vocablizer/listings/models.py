@@ -1,3 +1,4 @@
+from django import forms
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 class English(models.Model):
@@ -23,6 +24,10 @@ class English(models.Model):
     def __str__(self):
         return f"\"{self.word}\"" 
     
+class EnglishForm(forms.ModelForm):
+    class Meta:
+        model = English
+        exclude = ['active', 'rank']
 class Example(models.Model):
     id = models.fields.AutoField(primary_key=True)
     english = models.ForeignKey(English, on_delete=models.CASCADE)
@@ -30,5 +35,7 @@ class Example(models.Model):
     created_at = models.fields.DateTimeField(auto_now_add=True)
     updated_at = models.fields.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return f"{self.example}"
+class ExampleForm(forms.ModelForm):
+    class Meta:
+        model = Example
+        fields = "__all__"

@@ -1,7 +1,6 @@
 from django.core.mail import send_mail
 from listings.forms import ContactUsForm
-from listings.models import English
-from listings.models import Example
+from listings.models import English, EnglishForm, Example, ExampleForm
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
@@ -17,6 +16,31 @@ def english_detail(request, english_id):
     return render(request,
                    "listings/english_detail.html",
                   {'english_word': english_word})
+
+def english_add(request):
+    if request.method == 'POST':
+        form = EnglishForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('english-list')
+    else:
+        form = EnglishForm()        
+    return render(request,
+                     "listings/english_add.html",
+                     {'form': form})
+
+def example_add(request):
+    if request.method == "POST":
+        form = ExampleForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('example-list')
+    else:
+        form = ExampleForm()
+    return render(request,
+                   "listings/example_add.html",
+                   {'form': form})
 
 def example_list(request):
     examples = Example.objects.all()

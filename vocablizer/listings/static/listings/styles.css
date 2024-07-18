@@ -2,6 +2,7 @@
 :root {
     --primary-color: #4A90E2; /* Bleu doux */
     --secondary-color: #50E3C2; /* Vert d'eau */
+    --button-color: #FFD700; /* Or */
     --text-color: #4A4A4A; /* Gris foncé */
     --background-color: #F5F5F5; /* Gris très clair */
     --border-color: #B0C4DE; /* Bleu clair pour les bordures */
@@ -45,7 +46,7 @@ a:hover {
 }
 /* Boutons */
 button {
-    background-color: var(--primary-color);
+    background-color: var(--button-color);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -55,7 +56,7 @@ button {
     transition: background-color 0.3s ease;
 }
 button:hover {
-    background-color: darken(var(--primary-color), 10%);
+    background-color: darken(var(--button-color), 10%);
 }
 
 /* Espacement et conteneurs */
