@@ -30,6 +30,19 @@ def english_add(request):
                      "listings/english_add.html",
                      {'form': form})
 
+def english_edit(request, english_id):
+    english_word = get_object_or_404(English, pk=english_id)
+    if request.method == 'POST':
+        form = EnglishForm(request.POST, instance=english_word)
+        if form.is_valid():
+            form.save()
+            return redirect('english-detail', english_word.id)
+    else:
+        form = EnglishForm(instance=english_word)
+    return render(request,
+                    "listings/english_edit.html",
+                    {'form': form})
+
 def example_add(request):
     if request.method == "POST":
         form = ExampleForm(request.POST)
@@ -53,6 +66,19 @@ def example_detail(request, example_id):
     return render(request,
                    "listings/example_detail.html",
                   {'example': example})
+
+def example_edit(request, example_id):
+    example = get_object_or_404(Example, pk=example_id)
+    if request.method == 'POST':
+        form = ExampleForm(request.POST, instance=example)
+        if form.is_valid():
+            form.save()
+            return redirect('example-detail', example.id)
+    else:
+        form = ExampleForm(instance=example)
+    return render(request,
+                    "listings/example_edit.html",
+                    {'form': form})
 
 def about(request):
     return render(request,

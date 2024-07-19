@@ -4,9 +4,9 @@
     <h2> Detail for {{english_word.word}} :</h2>
     <ul>
         <li>Genre: {{english_word.get_genre_display}}</li>
-        {% if english_word.synonym%}
-        <li>Meaning: {{english_word.meaning}}</li>
-        {% endif %} 
+        {% if english_word.meaning %}
+            <li>Meaning: {{english_word.meaning}}</li>
+        {% endif %}
         {% for example in english_word.example_set.all%}
             <li> <a href="{% url 'example-detail' example.id%}"> Example {{ forloop.counter }}</a>
                 : {{example.example}}</li> 
@@ -16,6 +16,6 @@
         <li>Active: {{english_word.active|yesno}}</li>
     </ul>
 
-    <a href="{% url 'english-list' %}">Back to the list</a>
+    <a href="{% url 'english-edit' english_word.id %}">[Edit]<a> - <a href="{% url 'english-list' %}">Back to the list</a>
 
 {% endblock %}

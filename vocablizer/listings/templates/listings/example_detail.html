@@ -9,6 +9,6 @@
         <li> {{ example.updated_at }}
     </ul>
 
-    <a href="{% url 'example-list' %}">Back to the list</a>
+    <a href="{% url 'example-edit' example.id %}">[Edit]</a> - <a href="{% url 'example-list' %}">Back to the list</a>
 
 {% endblock %}

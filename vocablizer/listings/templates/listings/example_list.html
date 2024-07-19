@@ -7,7 +7,7 @@
 <ul> 
     {% for example in examples %}
         <h4> Example for <a href="{% url 'example-detail' example.id%}">
-            {{ example.english}}</a> : </h4>
+            {{ example.english}}</a> <a href="{% url 'example-edit' example.id %}">[Edit]</a>: </h4>
         <p>- {{ example.example }} </p>
     {% endfor %}
 </ul>

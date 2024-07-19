@@ -22,10 +22,12 @@ urlpatterns = [
 
     path('english/', views.english_list, name='english-list'),
     path('english/<int:english_id>/', views.english_detail, name='english-detail'),
+    path('english/<int:english_id>/edit/', views.english_edit, name='english-edit'),
     path('english/add/', views.english_add, name='english-add'),
 
     path('example/', views.example_list, name='example-list'),
     path('example/<int:example_id>/', views.example_detail, name='example-detail'),
+    path('example/<int:example_id>/edit/', views.example_edit, name='example-edit'),    
     path('example/add/', views.example_add, name='example-add'),
 
     path('about/', views.about, name='about'),
