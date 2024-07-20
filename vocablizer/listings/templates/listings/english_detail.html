@@ -16,6 +16,6 @@
         <li>Active: {{english_word.active|yesno}}</li>
     </ul>
 
-    <a href="{% url 'english-edit' english_word.id %}">[Edit]<a> - <a href="{% url 'english-list' %}">Back to the list</a>
+    <a href="{% url 'english-edit' english_word.id %}">[Edit]<a> - <a href="{% url 'english-delete' english_word.id %}">[Delete]</a> - <a href="{% url 'english-list' %}">Back to the list</a>
 
 {% endblock %}

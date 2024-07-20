@@ -43,6 +43,16 @@ def english_edit(request, english_id):
                     "listings/english_edit.html",
                     {'form': form})
 
+def english_delete(request, english_id):
+    english_word = get_object_or_404(English, pk=english_id)
+    if request.method == 'POST':
+        english_word.delete()
+        return redirect('english-list')
+
+    return render(request,
+                    "listings/english_delete.html",
+                    {'english_word': english_word})
+
 def example_add(request):
     if request.method == "POST":
         form = ExampleForm(request.POST)
@@ -79,6 +89,17 @@ def example_edit(request, example_id):
     return render(request,
                     "listings/example_edit.html",
                     {'form': form})
+
+def example_delete(request, example_id):
+    example = get_object_or_404(Example, pk=example_id)
+    if request.method == 'POST':
+        example.delete()
+        return redirect('example-list')
+
+    return render(request,
+                    "listings/example_delete.html",
+                    {'example': example})
+
 
 def about(request):
     return render(request,
